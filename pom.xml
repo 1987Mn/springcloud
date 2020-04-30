@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lzw</groupId>
+    <artifactId>springcloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>springcloud-api</module>
+        <module>springcloud_provider_dept_8001</module>
+    </modules>
+
+    <!--    打包方式    -->
+    <packaging>pom</packaging>
+
+    <!--    定义版本号    -->
+    <properties>
+        <!--    项目编码    -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--    依赖版本管理  -->
+        <springcloud.version>Finchley.SR1</springcloud.version>
+        <springboot.version>2.2.5.RELEASE</springboot.version>
+        <!--    数据库     -->
+        <mysql.version>5.1.46</mysql.version>
+        <druid.version>1.1.10</druid.version>
+        <!--    日志测试  -->
+        <logging.version>2.2.5.RELEASE</logging.version>
+<!--        <logback.version>1.2.3</logback.version>
+        <log4j.version>1.2.17</log4j.version>-->
+        <lombok.version>1.18.8</lombok.version>
+        <junit.version>4.12</junit.version>
+        <!--    启动器版本   -->
+        <mybatis.version>2.1.1</mybatis.version>
+
+    </properties>
+
+    <!--    依赖管理    -->
+    <dependencyManagement>
+        <dependencies>
+            <!--    springcloud 依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--    springboot 依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--    数据库     -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!--    lombok  -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--    日志  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${logging.version}</version>
+            </dependency>
+           <!-- <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>-->
+            <!--    junit 单元测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--    springboot启动器   -->
+            <!--    mybaties启动器 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!--    / springboot启动器   -->
+
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
